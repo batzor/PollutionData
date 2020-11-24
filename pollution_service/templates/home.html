@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if error_message %}<p class="error_message"><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <form action="/" method="post" class="city_form">
+        {% csrf_token %}
+        <!-- <label for="city_name">City name: </label>
+        <input id="city_name" type="text" name="city_name" value="{{ current_name }}">
+        <input type="submit" value="OK"> -->
+        <div class="input-group input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-lg">City</span>
+            </div>
+            <input id="city_name" type="text" class="form-control" name="city_name" aria-describedby="inputGroup-sizing-lg" value="{{ current_name }}">
+        </div>
+    </form>
+
+    {% if data %}
+        <div class="pollution_table">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Pollutant</th>
+                        <th scope="col">Concentration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for key, value in data %}
+                        <tr>
+                            <td>{{key}}</td>
+                            <td>{{value}}</td>
+                        </tr>
+                    {% endfor %}     
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
+    
+{% endblock %}

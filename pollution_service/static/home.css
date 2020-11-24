@@ -1,0 +1,18 @@
+.city_form {
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 50px;
+}
+
+.error_message {
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  color: red;
+}
+
+.pollution_table {
+  padding-left: 100px;
+  padding-right: 100px;
+}
