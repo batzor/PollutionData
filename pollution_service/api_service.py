@@ -18,3 +18,8 @@ class PollutionService:
         url = f'http://ip-api.com/json/{ip}'
         data = requests.get(url).json()
         return data['city']
+
+    def get_ip_lonlat(self, ip):
+        url = f'http://ip-api.com/json/{ip}'
+        data = requests.get(url).json()
+        return data['lon'], data['lat']
